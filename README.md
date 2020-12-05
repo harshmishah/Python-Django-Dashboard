@@ -4,7 +4,7 @@
 
 To run the Django development server, execute the following command:
 
-`python manage.py runserver`
+`python3 manage.py runserver`
 
 Next, open the following URL in your browser:
 

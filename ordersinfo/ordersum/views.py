@@ -8,8 +8,8 @@ import random
 
 def home(request):
     #Reading files
-    orderMain = pd.read_excel('Sample_Orders_Data.xls',sheet_name='Order Main')
-    customerMaster = pd.read_excel('Sample_Orders_Data.xls',sheet_name='Customer Main')
+    orderMain = pd.read_excel('ordersinfo/Sample_Orders_Data.xls',sheet_name='Order Main')
+    customerMaster = pd.read_excel('ordersinfo/Sample_Orders_Data.xls',sheet_name='Customer Main')
     #Formatting Customer Master Table
     customerMaster['Address'] = customerMaster['City']+', '+customerMaster['State']+' '+customerMaster['Postal Code'].astype(str)+', '+customerMaster['Country/Region']
     customerMaster.drop(['City','State','Postal Code','Country/Region'],axis=1,inplace=True)
@@ -38,8 +38,8 @@ def home(request):
 
 def namedata(request):
     #Reading files
-    orderMain = pd.read_excel('Sample_Orders_Data.xls',sheet_name='Order Main')
-    customerMaster = pd.read_excel('Sample_Orders_Data.xls',sheet_name='Customer Main')
+    orderMain = pd.read_excel('ordersinfo/Sample_Orders_Data.xls',sheet_name='Order Main')
+    customerMaster = pd.read_excel('ordersinfo/Sample_Orders_Data.xls',sheet_name='Customer Main')
     #Formatting Customer Master Table
     customerMaster['Address'] = customerMaster['City']+', '+customerMaster['State']+' '+customerMaster['Postal Code'].astype(str)+', '+customerMaster['Country/Region']
     customerMaster.drop(['City','State','Postal Code','Country/Region'],axis=1,inplace=True)

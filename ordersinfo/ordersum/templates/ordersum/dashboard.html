@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		
+		<title>Dashboard</title>
+		<style>
+			body {
+	  		background-color: #f1f3f8;
+		    	color: #393b44;
+			}
+
+			h1 {
+			background-color: #8d93ab;
+			color: #393b44;
+			}
+			p {
+			border: 2px solid black;
+			outline: #d6e0f0 solid 10px;
+			margin: auto;  
+			padding: 40px;
+			}
+			
+			#my_table {
+			border-collapse: collapse;
+			width: 100%;
+			}
+
+			#my_table td, #my_table th {
+			border: 1px solid #ddd;
+			padding: 8px;
+			}
+
+			#my_table th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #393b44;
+			color: white;
+			}
+		</style>
+	</head>
+	<body>
+
+		<h1>Order Summary</h1>
+
+		<form method='post' action='select-name'>
+			{% csrf_token %}
+		        <label>Select Customer: <label>
+		        <select name="drop1">
+				<option value="">--Name--</option>
+				{% for i in customers %}
+				<option value="{{ i }}" >{{i}}</option>
+	
+			 {% endfor %}
+		         </select>
+			 <input  type = "submit" value="Submit">
+		</form><br/><br/>
+
+		<p> <strong>Cutomer:</strong> {{customerName}} <br/>
+		<strong>Address:</strong>  {{address}}<br/>
+		<strong>Phone Number:</strong> {{phonenumber}} <br/>
+		<strong>Total Spent:</strong> ${{spent}} </p>
+
+		<br/><br/>
+		
+		<h3>Order History</h3>
+		<div id="my_table"> 
+		{{ table_content|safe }}
+		</div>
+	</body>
+	
+</html>

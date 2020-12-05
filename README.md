@@ -1,4 +1,4 @@
-# Python-Django-Dashboard
+# Python Django Dashboard
 
 # How to run the project
 
